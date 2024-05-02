@@ -16,20 +16,27 @@
       "predeploy": [
         "npm --prefix \"$RESOURCE_DIR\" run lint"
       ]
+    },
+    {
+      "source": "shopping-cart-database",
+      "codebase": "shopping-cart-database",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
     }
   ],
   "hosting": {
-    "public": "public",
+    "public": "y",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }

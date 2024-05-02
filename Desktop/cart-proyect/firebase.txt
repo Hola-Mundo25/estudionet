@@ -1,0 +1,20 @@
+Una vez inicializado firebase mediante el comando
+
+"firebase init"
+
+Vamos a especificar cuales son los atributos
+que queremos setear en nuestro directorio vigente
+
+* Firestore: Configure security rules and indexes files   
+for Firestore (para poder borrar la data de la DB)
+
+* Functions: Configure a Cloud Functions directory and its
+ files (para poder generar las funciones del backend)
+
+ * Hosting: Configure files for Firebase Hosting and       
+(optionally) set up GitHub Action deploys (para poder desplegar el proyecto)
+
+* Storage: Configure a security rules file for Cloud Storage (Para poder guardar las imágenes)
+
+
+
