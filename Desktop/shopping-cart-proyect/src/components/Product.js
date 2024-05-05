@@ -43,7 +43,9 @@ export default function Product() {
             variant='h5'
             color='textSecondary'
         >
-          {accouting.formatMoney(50)}
+          {/*en caso de querer cambiar la moneda insertamos un
+          segundo parametro luego del valor (50, "aqui")*/}
+          {accouting.formatMoney(50)} 
         </Typography>
         }
         title="zapatillas"
@@ -67,9 +69,6 @@ export default function Product() {
           <Rating
             name="simple-controlled"
             value={3}
-            onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
           />
         </IconButton>
         <ExpandMore

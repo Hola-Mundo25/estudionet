@@ -1,13 +1,15 @@
 import './App.css';
+import React from 'react';
 import Product from './components/Product';
+import Navbar from './components/Navbar'
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>Proyecto react-cart-shop</h1>
+    <>
+      <Navbar/>
       <Product/>
-    </div>
+    </>
   );
 }
 
