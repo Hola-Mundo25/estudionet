@@ -5,8 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import logo from ".src/assets/vs_logo.png"
+import AddShoppingCart from '@mui/icons-material/AddShoppingCart';
+// import logo from '../assets/vs_logo.png'
 
     export default function Navbar() {
     return (
@@ -18,14 +18,17 @@ import logo from ".src/assets/vs_logo.png"
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2 }}
+                sx={{ mr: 1 }}
             >
-                <MenuIcon />
+            {/* <img src={logo}/> */}
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 News
             </Typography>
             <Button color="inherit">Login</Button>
+            <IconButton>
+                <AddShoppingCart/>
+            </IconButton>
             </Toolbar>
         </AppBar>
         </Box>

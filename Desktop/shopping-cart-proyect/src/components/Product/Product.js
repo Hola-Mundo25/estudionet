@@ -36,7 +36,7 @@ export default function Product() {
   };
 
   return (
-    <Card sx={{ maxWidth: 300 }}>
+    <Card  style={{ margin: '100px 10px 50px 10px' }} sx={{ maxWidth: 300 }}>
       <CardHeader
         action={
           <Typography
@@ -66,11 +66,11 @@ export default function Product() {
       <CardActions disableSpacing>
         <IconButton aria-label="share">
           <AddShoppingCartIcon />
-          <Rating
-            name="simple-controlled"
-            value={3}
-          />
         </IconButton>
+        <Rating
+          name="simple-controlled"
+          value={3}
+        />
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
