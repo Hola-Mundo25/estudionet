@@ -13,6 +13,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import accouting from "accounting"
 
+
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
@@ -28,7 +29,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export default function Product() {
+export default function Product({product:{id, name, productType, image, price, rating, description}}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -45,21 +46,21 @@ export default function Product() {
         >
           {/*en caso de querer cambiar la moneda insertamos un
           segundo parametro luego del valor (50, "aqui")*/}
-          {accouting.formatMoney(50)} 
+          {accouting.formatMoney(price)} 
         </Typography>
         }
-        title="zapatillas"
+        title={name}
         subheader="in stock"
       />
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
+        image={image}
+        alt={description}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          un producto
+          {name}
         </Typography>
       </CardContent>
 
@@ -69,7 +70,7 @@ export default function Product() {
         </IconButton>
         <Rating
           name="simple-controlled"
-          value={3}
+          value={rating}
         />
         <ExpandMore
           expand={expanded}
@@ -83,7 +84,7 @@ export default function Product() {
 
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>lalala</Typography>
+          <Typography paragraph>{description}</Typography>
         </CardContent>
       </Collapse>
     </Card>

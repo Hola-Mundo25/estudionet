@@ -10,15 +10,6 @@ const products = [
     },
     {
         id: 1,
-        name: "shoes",
-        productType: "running shoes",
-        price: 40,
-        rating: 4,
-        image: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTXuUN8Yn_vdRCA6jA0rL_rwwjWIeO-ZhYA3LN9qrN8Btl40sXvCMMaVMBqWFu2EHOAsna22i0VIBgAAdLUwyOozFW4v-dV3sxK6sVl2enxNQ4-YlnfyNq86TOu2rPLp0mq2LagKDA&usqp=CAc',
-        description: 'zapatillas puma running'
-    },
-    {
-        id: 1,
         name: "watch",
         productType: "watches",
         price: 50,
@@ -37,11 +28,13 @@ const products = [
     },
     {
         id: 1,
-        name: "shoes",
-        productType: "running shoes",
-        price: 40,
+        name: "Termo Stanley",
+        productType: "camping",
+        price: 25,
         rating: 4,
-        image: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTXuUN8Yn_vdRCA6jA0rL_rwwjWIeO-ZhYA3LN9qrN8Btl40sXvCMMaVMBqWFu2EHOAsna22i0VIBgAAdLUwyOozFW4v-dV3sxK6sVl2enxNQ4-YlnfyNq86TOu2rPLp0mq2LagKDA&usqp=CAc',
-        description: 'zapatillas puma running'
+        image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTyZRyidXWZsKhzFo7ez4f1stNabe-LQT0SVEWLRspqAM2SNi9uBtFguOfd48e7sZvnu3hcZ4YpQU0CdW1hUYGfOhjLXMGl4TRvIsV4IIVHS6HdWRkd21Pg1hrXG7lpgU4o785LZg&usqp=CAc',
+        description: 'Termo para mate'
     },
 ]
+
+export default products;
