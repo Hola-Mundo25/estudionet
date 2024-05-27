@@ -1,9 +1,11 @@
 import React from "react";
-import { Grid, Typography, makeStyles } from "@mui/material";
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography'
+import { styled } from '@mui/material/styles';
 import products from './product-data'
-import Product from "./Product/Product";
+import CheckOutCard from "./CheckOutCard";
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = styled((theme) => ({
     root: {
         flexGrow: 1,
         padding: "2rem",
@@ -16,9 +18,9 @@ const CheckOutPage = () =>{
 function FormRow() {
     return(
         <>
-        {products.map((item)=>
-            <Grid item xs={12} sm={8} lg={4}>
-                <Product key={item.id} product={item}/>
+        {products.map((product)=>
+            <Grid product xs={12} sm={8} lg={4}>
+                <CheckOutCard key={product.id} product={product}/>
             </Grid>
         )}
         </>

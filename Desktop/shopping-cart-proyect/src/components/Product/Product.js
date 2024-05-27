@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { Rating } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -14,15 +14,15 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import accouting from "accounting"
 
 
-interface ExpandMoreProps extends IconButtonProps {
+interface ExpandMoreProps extends React.ComponentProps<typeof IconButton> {
   expand: boolean;
 }
 
-const ExpandMore = styled((props: ExpandMoreProps) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+
+const ExpandMore = styled(({ expand, ...other }: ExpandMoreProps) => (
+  <IconButton {...other} />
+))(({ theme, expand }) => ({
+  transform: expand ? 'rotate(180deg)' : 'rotate(0deg)',
   marginLeft: 'auto',
   transition: theme.transitions.create('transform', {
     duration: theme.transitions.duration.shortest,
@@ -60,7 +60,7 @@ export default function Product({product:{id, name, productType, image, price, r
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {name}
+          {productType}
         </Typography>
       </CardContent>
 
