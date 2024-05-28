@@ -1,5 +1,4 @@
 import  React from 'react';
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -8,22 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import accouting from "accounting"
 import DeleteIcon from '@mui/icons-material/Delete';
-import { ClassNames } from '@emotion/react';
 
-    interface ExpandMoreProps extends React.ComponentProps<typeof IconButton> {
-    expand: boolean;
-    }
-
-
-    const ExpandMore = styled(({ expand, ...other }: ExpandMoreProps) => (
-    <IconButton {...other} />
-    ))(({ theme, expand }) => ({
-    transform: expand ? 'rotate(180deg)' : 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-    }));
+// Para ver stylos ver 02:00:00 edel video.
 
     export default function CheckOutCard({product:{id, name, productType, image, price, rating, description}}) {
 
