@@ -6,10 +6,9 @@ import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import accouting from "accounting"
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import { ClassNames } from '@emotion/react';
 
     interface ExpandMoreProps extends React.ComponentProps<typeof IconButton> {
     expand: boolean;
@@ -28,7 +27,6 @@ import accouting from "accounting"
 
     export default function CheckOutCard({product:{id, name, productType, image, price, rating, description}}) {
 
-
     return (
         <Card  style={{ margin: '100px 10px 50px 10px' }} sx={{ maxWidth: 300 }}>
         <CardHeader
@@ -43,20 +41,23 @@ import accouting from "accounting"
             </Typography>
             }
             title={name}
-            subheader="in stock"
         />
-        <CardMedia
-            image={image}
-        />
+        <CardMedia 
+        image={image}
+        style={{ height: '200px', width: '300px' }}     
+        title={name}/>
 
         <CardActions disableSpacing>
+            <div>
+            {Array(rating)
+                .fill()
+                .map((_, i)=>(
+                    <p>&#11088;</p>
+                ))}
+            </div>
             <IconButton aria-label="share">
-            <AddShoppingCartIcon />
+                <DeleteIcon fontSize='large'/>
             </IconButton>
-            <ExpandMore
-            >
-            <ExpandMoreIcon />
-            </ExpandMore>
         </CardActions>
 
         </Card>
