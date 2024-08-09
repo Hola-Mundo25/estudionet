@@ -18,7 +18,6 @@
 
 <script>
 import { ref } from "vue";
-import logo from "assets/logo.png"
 // import CatApi from '@/services/CatApi';
 
 export default {
@@ -26,7 +25,7 @@ export default {
 
     data() {
     return {
-        images: [logo],
+        images: [],
         }
     },
 
