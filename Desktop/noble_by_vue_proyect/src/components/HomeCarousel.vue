@@ -18,15 +18,20 @@
 
 <script>
 import { ref } from "vue";
+import logo from "assets/logo.png"
+// import CatApi from '@/services/CatApi';
 
 export default {
-    name: "HomeCarousel",
-    props: {
-        images: {
-        type: Array,
-        required: true,
+    name: "CatCarousel",
+
+    data() {
+    return {
+        images: [logo],
+        }
     },
-    },
+
+    methods : {
+
     setup(props) {
     const currentIndex = ref(0);
 
@@ -45,8 +50,9 @@ export default {
     prevSlide,
     nextSlide,
     };
-},
-};
+}
+}
+}
 </script>
 
 <style scoped>
