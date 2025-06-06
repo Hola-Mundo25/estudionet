@@ -1,7 +1,7 @@
 from db import cursor, conn
 
 def cargar_productos():
-    # Crear tabla si no existe
+
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS productos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -28,7 +28,7 @@ def cargar_productos():
             print("❌ Precio inválido. Ingresá un número.")
             continue
 
-        # Insertar en la base de datos
+
         cursor.execute("INSERT INTO productos (nombre, precio) VALUES (?, ?)", (nombre, precio))
         conn.commit()
         print(f"✅ Producto '{nombre}' cargado.\n")
@@ -42,15 +42,16 @@ def ver_tabla_productos():
         for prod in productos:
             print(f"ID: {prod[0]}, Nombre: {prod[1]}, Precio: ${prod[2]:.2f}")
         print("")
+        return True
     else:
         print("\n⚠️ No hay productos para mostrar.\n")
-        
+        return False  
     
 
 def modificar_producto():
     print("✏️ Modificar Producto")
     
-    ver_tabla_productos()  # Mostrar productos para que el usuario vea IDs
+    ver_tabla_productos() 
     
     try:
         id_producto = int(input("Ingrese el ID del producto a modificar: "))
@@ -58,7 +59,7 @@ def modificar_producto():
         print("❌ ID inválido. Debe ser un número entero.")
         return
 
-    # Verificar que el producto exista
+
     cursor.execute("SELECT * FROM productos WHERE id = ?", (id_producto,))
     producto = cursor.fetchone()
     if not producto:
@@ -69,12 +70,12 @@ def modificar_producto():
 
     nuevo_nombre = input("Nuevo nombre (Enter para no cambiar): ").strip()
     if nuevo_nombre == "":
-        nuevo_nombre = producto[1]  # conservar el nombre actual
+        nuevo_nombre = producto[1] 
     
     try:
         nuevo_precio_input = input("Nuevo precio (Enter para no cambiar): ").strip()
         if nuevo_precio_input == "":
-            nuevo_precio = producto[2]  # conservar precio actual
+            nuevo_precio = producto[2]  
         else:
             nuevo_precio = float(nuevo_precio_input)
             if nuevo_precio < 0:
@@ -84,7 +85,7 @@ def modificar_producto():
         print("❌ Precio inválido. Debe ser un número.")
         return
 
-    # Actualizar en la base de datos
+
     cursor.execute(
         "UPDATE productos SET nombre = ?, precio = ? WHERE id = ?",
         (nuevo_nombre, nuevo_precio, id_producto)
@@ -96,16 +97,16 @@ def modificar_producto():
 
 def borrar_producto():
     print("🗑️ Borrar Producto")
-    
-    ver_tabla_productos()  # Mostrar productos para que el usuario vea IDs
-    
+
+    if not ver_tabla_productos():  
+        return
+
     try:
         id_producto = int(input("Ingrese el ID del producto a borrar: "))
     except ValueError:
         print("❌ ID inválido. Debe ser un número entero.")
         return
 
-    # Verificar que el producto exista
     cursor.execute("SELECT * FROM productos WHERE id = ?", (id_producto,))
     producto = cursor.fetchone()
     if not producto:
