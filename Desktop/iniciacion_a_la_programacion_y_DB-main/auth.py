@@ -32,6 +32,7 @@ def login_cliente():
                 elif crear == 'n':
                     print("🔁 Volviendo al menú principal...\n")
                     break
+
                 
 def login_admin():
     intentos = 0
@@ -64,6 +65,16 @@ def login_admin():
                     break
 
 
+def validar_contraseña(password):
+    if len(password) < 6:
+        print("❌ La contraseña debe tener al menos 6 caracteres.")
+        return False
+    if not any(c.isalpha() for c in password) or not any(c.isdigit() for c in password):
+        print("❌ La contraseña debe contener letras y números.")
+        return False
+    return True
+
+
 def crear_admin():
     print("🔐 Creando Administrador...")
     nombre = input("Nombre: ")
@@ -73,7 +84,11 @@ def crear_admin():
         print(f"❌ Ya existe un administrador con el email '{email}'")
         return
 
-    password = input("Contraseña: ")
+    while True:
+        password = input("Contraseña (mínimo 6 caracteres, letras y números): ")
+        if validar_contraseña(password):
+            break
+
     admin = Administrador(nombre, email, password)
     admin.guardar()
     print("✅ Administrador guardado.\n")
@@ -90,7 +105,11 @@ def crear_cliente():
         print(f"❌ Ya existe un cliente con el email '{email}'")
         return
 
-    password = input("Contraseña: ")
+    while True:
+        password = input("Contraseña (mínimo 6 caracteres, letras y números): ")
+        if validar_contraseña(password):
+            break
+
     cliente = Cliente(nombre, email, password)
     cliente.guardar()
     print("✅ Cliente guardado.\n")

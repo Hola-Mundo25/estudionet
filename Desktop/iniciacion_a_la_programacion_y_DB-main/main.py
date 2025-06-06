@@ -1,4 +1,4 @@
-from auth import login_cliente, login_admin
+from manage_user import gestionar_usuario
 
 def main():
 
@@ -14,10 +14,10 @@ def main():
 
         if opcion == "1":
             print("\n🧑‍💼 Accediendo como Cliente...\n")
-            login_cliente()
+            gestionar_usuario("cliente")
         elif opcion == "2":
             print("\n🛠️  Accediendo como Administrador...\n")
-            login_admin()
+            gestionar_usuario("admin")
         elif opcion == "3":
             print("\n👋 ¡Hasta pronto! Gracias por usar el sistema.\n")
             break
