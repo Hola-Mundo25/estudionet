@@ -44,4 +44,3 @@ El objetivo es que los usuarios puedan:
 ## Diagramas del sistema
 - **Diagrama de Clases (UML)**: incluye `Usuario`, `Post`, `Comentario`, `GrupoEstudio`.  
 - **Modelo Entidad-Relación (MER)**: representa cómo se almacenarán los datos en la base de datos.
->>>>>>> 69ffe6f453fb43e5ddc50fe2db415f0f574b88ab
