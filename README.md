@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🌐 Estudionet
 
 Un espacio colaborativo para aprender, crear y compartir proyectos en equipo.  
