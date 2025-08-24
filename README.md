@@ -1,21 +1,3 @@
-# 🌐 Estudionet
-
-Un espacio colaborativo para aprender, crear y compartir proyectos en equipo.  
-Aquí trabajamos con dedicación y entusiasmo para crecer como desarrolladores y potenciar nuestras habilidades.
-
----
-
-## 👥 Integrantes
-
-- **Marcos** → [Marcos-piza118](https://github.com/Marcos-piza118)  
-- **Lisandro** → [Lichyyyy](https://github.com/Lichyyyy)  
-- **Daniel** → [danielmatiasv84](https://github.com/danielmatiasv84)  
-- **Fernando** → [fercazondev](https://github.com/fercazondev)  
-- **Micaela** → [MicaPerezMagg](https://github.com/MicaPerezMagg)  
-- **Ivo** → [konstantinowivo](https://github.com/konstantinowivo)  
-
----
-=======
 #  EstudioNet
 
 **EstudioNet** es una red social tipo foro diseñada para estudiantes y programadores de todos los niveles, desde principiantes hasta expertos.  
@@ -43,3 +25,14 @@ El objetivo es que los usuarios puedan:
 ## Diagramas del sistema
 - **Diagrama de Clases (UML)**: incluye `Usuario`, `Post`, `Comentario`, `GrupoEstudio`.  
 - **Modelo Entidad-Relación (MER)**: representa cómo se almacenarán los datos en la base de datos.
+
+- 
+## Integrantes
+
+- **Marcos** → [Marcos-piza118](https://github.com/Marcos-piza118)  
+- **Lisandro** → [Lichyyyy](https://github.com/Lichyyyy)  
+- **Daniel** → [danielmatiasv84](https://github.com/danielmatiasv84)  
+- **Fernando** → [fercazondev](https://github.com/fercazondev)  
+- **Micaela** → [MicaPerezMagg](https://github.com/MicaPerezMagg)  
+- **Ivo** → [konstantinowivo](https://github.com/konstantinowivo)  
+
