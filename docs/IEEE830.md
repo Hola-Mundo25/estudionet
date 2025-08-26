@@ -79,14 +79,14 @@ Sistema web cliente-servidor con base de datos centralizada.
 - **RNF8**: Escalabilidad para contenido multimedia
 
 ## 4. Modelos del sistema
-**
+
 ### 4.1 Diagrama de clases (v1)
+
 **Clases principales:**
 - Usuario
 - Post
 - Comentario
 - GrupoEstudio
-
 
 **Relaciones:**
 - Usuario 1..* → Post
