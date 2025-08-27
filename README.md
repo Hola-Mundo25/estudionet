@@ -1,20 +1,23 @@
 #  EstudioNet
 
-**EstudioNet** es una red social tipo foro diseñada para estudiantes y programadores de todos los niveles, desde principiantes hasta expertos.  
-El objetivo es que los usuarios puedan:
-- Resolver dudas académicas.
-- Compartir posts y comentarios.
-- Buscar compañeros de estudio según su nivel de conocimiento.
-- Participar en grupos de estudio organizados por tema o materia.
----
+**EstudioNet** es una red social educativa + marketplace de cursos de programación para estudiantes de todos los niveles.
 
-## Características principales
+## Funcionalidades principales
+
+### Red Social
 - Registro y autenticación de usuarios.
 - Creación de publicaciones y comentarios.
 - Búsqueda de compañeros por intereses y nivel.
-- Grupos de estudio privados y públicos.
-- Interfaz sencilla para colaborar en tiempo real.
----
+- Grupos de estudio temáticos.
+- Mensajería privada.
+
+### Tienda de Cursos
+- Catálogo de cursos de programación.
+- Carrito de compras.
+- Sistema de valoraciones y reseñas.
+- Perfiles de instructores.
+- Cursos gratuitos y de pago.
+
 
 ##  Tecnologías a utilizar
 - **Frontend**: HTML, CSS, JavaScript.  
@@ -23,16 +26,14 @@ El objetivo es que los usuarios puedan:
 - **Control de versiones**: Git y GitHub.  
 --- 
 ## Diagramas del sistema
-- **Diagrama de Clases (UML)**: incluye `Usuario`, `Post`, `Comentario`, `GrupoEstudio`.  
+- **Diagrama de Clases (UML)**: incluye `Usuario`, `Post`, `Comentario`, `GrupoEstudio` `Curso`, `Instructor`, `Carrito`, `Compra`, `Reseña` `Mensaje`. 
 - **Modelo Entidad-Relación (MER)**: representa cómo se almacenarán los datos en la base de datos.
 
-- 
 ## Integrantes
 
-- **Marcos** → [Marcos-piza118](https://github.com/Marcos-piza118)  
-- **Lisandro** → [Lichyyyy](https://github.com/Lichyyyy)  
-- **Daniel** → [danielmatiasv84](https://github.com/danielmatiasv84)  
-- **Fernando** → [fercazondev](https://github.com/fercazondev)  
-- **Micaela** → [MicaPerezMagg](https://github.com/MicaPerezMagg)  
-- **Ivo** → [konstantinowivo](https://github.com/konstantinowivo)  
-
+- **Marcos** [Marcos-piza118](https://github.com/Marcos-piza118)  
+- **Lisandro** [Lichyyyy](https://github.com/Lichyyyy)  
+- **Daniel**  [danielmatiasv84](https://github.com/danielmatiasv84)  
+- **Fernando**  [fercazondev](https://github.com/fercazondev)  
+- **Micaela** [MicaPerezMagg](https://github.com/MicaPerezMagg)  
+- **Ivo** [konstantinowivo](https://github.com/konstantinowivo)  
