@@ -32,8 +32,7 @@
 ## Integrantes
 
 - **Marcos** [Marcos-piza118](https://github.com/Marcos-piza118)  
-- **Lisandro** [Lichyyyy](https://github.com/Lichyyyy)  
-- **Daniel**  [danielmatiasv84](https://github.com/danielmatiasv84)  
+- **Lisandro** [Lichyyyy](https://github.com/Lichyyyy)   
 - **Fernando**  [fercazondev](https://github.com/fercazondev)  
 - **Micaela** [MicaPerezMagg](https://github.com/MicaPerezMagg)  
 - **Ivo** [konstantinowivo](https://github.com/konstantinowivo)  
