@@ -1,5 +1,5 @@
 from database import Database
-
+from utils.security import hash_password
 
 class UserController:
     def get_all_users(self):
