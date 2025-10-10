@@ -30,9 +30,7 @@
 - **Modelo Entidad-Relación (MER)**: representa cómo se almacenarán los datos en la base de datos.
 
 ## Integrantes
-
-- **Marcos** [Marcos-piza118](https://github.com/Marcos-piza118)  
 - **Lisandro** [Lichyyyy](https://github.com/Lichyyyy)   
 - **Fernando**  [fercazondev](https://github.com/fercazondev)  
-- **Micaela** [MicaPerezMagg](https://github.com/MicaPerezMagg)  
+- **Pilar**  (Lindainfinita10 https://github.com/LindaInfinita10)
 - **Ivo** [konstantinowivo](https://github.com/konstantinowivo)  
