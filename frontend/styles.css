@@ -86,8 +86,8 @@ p{
 }
 
 .hero-section {
-    background: url('/imagenes/imagen4.png');
-    background-size: cover;
+    background: url('/Imagenes/Imagen1.webp');
+    background-size: cover; 
     background-position: center;
     color: white;
     padding: 7rem 0;
