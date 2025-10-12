@@ -61,7 +61,7 @@ Sistema web cliente-servidor con base de datos centralizada.
 - **RF13**: Filtrado de cursos por categoría/nivel
 - **RF14**: Perfiles de instructores verificados
 
-### 3.1 No funcionales
+### 3.2 No funcionales
 - **RNF1**: Accesible desde navegadores modernos
 - **RNF2**: Almacenamiento seguro de contraseñas
 - **RNF3**: Respuesta < 2 segundos
@@ -70,8 +70,9 @@ Sistema web cliente-servidor con base de datos centralizada.
 - **RNF6**: Transacciones seguras (SSL/TLS)
 - **RNF7**: Integración con pasarela de pagos
 - **RNF8**: Escalabilidad para contenido multimedia
+- **RNF9**: Restricción de acceso según roles
 
-### 3.2 Sistema de Mensajería
+### 3.3 Sistema de Mensajería
 - **RF15**: Enviar mensajes privados entre usuarios
 - **RF16**: Ver historial de conversaciones
 - **RF17**: Notificaciones de mensajes no leídos
