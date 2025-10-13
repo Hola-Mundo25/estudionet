@@ -3,6 +3,7 @@ from models.user import User
 from controllers.auth_controller import AuthController
 from controllers.user_controller import UserController
 from controllers.course_controller import CourseController
+from controllers.enrollment_controller import EnrollmentController
 
 def main():
     print("🎓 ESTUDIONET - Sistema de Autenticación")
@@ -11,6 +12,7 @@ def main():
     auth = AuthController()
     user_controller = UserController()
     course_controller = CourseController()
+    enrollment_controller = EnrollmentController()
 
     while True:
         print("\n📋 MENU PRINCIPAL")
@@ -28,7 +30,7 @@ def main():
                 if usuario.role == "admin":
                     menu_admin(usuario, user_controller, course_controller)
                 else:
-                    menu_usuario(usuario, user_controller)
+                    menu_usuario(usuario, user_controller, course_controller, enrollment_controller)
         elif opcion == "3":
             print("👋 ¡Hasta pronto!")
             break
@@ -105,21 +107,32 @@ def menu_admin(usuario, user_controller, course_controller):
         else:
             print("❌ Opción no válida")
 
-def menu_usuario(usuario, user_controller):
+def menu_usuario(usuario, user_controller, course_controller, enrollment_controller):
     while True:
         print(f"\n👤 PANEL USUARIO - {usuario.username}")
-        print("=" * 30)
-        print("1. Ver mis datos")
-        print("2. Editar mis datos")
-        print("3. Cerrar sesión")
+        print("=" * 40)
+        print("📚 MIS CURSOS")
+        print("1. Ver mis cursos inscritos")
+        print("2. Explorar cursos disponibles")
+        print("3. Inscribirse a un curso")
+        print("\n👤 MI CUENTA")
+        print("4. Ver mis datos")
+        print("5. Editar mis datos")
+        print("6. Cerrar sesión")
         
         opcion = input("\nSelecciona una opción: ")
         
         if opcion == "1":
-            ver_mis_datos(usuario)
+            ver_mis_cursos(usuario, enrollment_controller)
         elif opcion == "2":
-            editar_mis_datos(usuario, user_controller)
+            explorar_cursos(course_controller)
         elif opcion == "3":
+            inscribirse_curso(usuario, course_controller, enrollment_controller)
+        elif opcion == "4":
+            ver_mis_datos(usuario)
+        elif opcion == "5":
+            editar_mis_datos(usuario, user_controller)
+        elif opcion == "6":
             print("🔒 Sesión cerrada")
             break
         else:
