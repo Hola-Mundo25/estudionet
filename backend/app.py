@@ -181,18 +181,26 @@ def editar_mis_datos(usuario, user_controller):
 # ===== FUNCIONES DE CURSOS =====
 def listar_cursos(course_controller):
     print("\n📚 LISTA DE CURSOS")
-    print("-" * 60)
+    print("=" * 80)
+    
     cursos = course_controller.get_all_courses()
     
     if cursos:
         for curso in cursos:
-            print(f"ID: {curso['id']} | Título: {curso['title']}")
-            print(f"   Descripción: {curso['description']}")
-            print(f"   Precio: ${curso['price']} | Duración: {curso['duration']} min | Nivel: {curso['level']}")
-            print(f"   Instructor: {curso['instructor']} | Categoría: {curso['category']}")
-            print("-" * 60)
+            print(f"\n🆔 ID: {curso['id']}")
+            print(f"📖 Título: {curso['title']}")
+            print(f"📝 Descripción: {curso['description']}")
+            print(f"💰 Precio: ${curso['price']:,.2f}")
+            print(f"⏱️  Duración: {curso['duration']} minutos")
+            print(f"📊 Nivel: {curso['level'].capitalize()}")
+            print(f"👨‍🏫 Instructor: {curso['instructor']}")
+            print(f"🏷️  Categoría: {curso['category']}")
+            print("-" * 80)
+        print(f"\n✅ Total de cursos: {len(cursos)}")
     else:
-        print("No hay cursos registrados")
+        print("❌ No hay cursos registrados")
+    
+    input("\n👉 Presiona ENTER para continuar...")
 
 def agregar_curso(course_controller):
     print("\n➕ AGREGAR NUEVO CURSO")
@@ -213,14 +221,29 @@ def agregar_curso(course_controller):
 
 def modificar_curso(course_controller):
     print("\n✏️ MODIFICAR CURSO")
-    print("-" * 20)
+    print("=" * 80)
     
-    course_id = input("ID del curso a modificar: ")
+    # Primero mostrar lista de cursos disponibles
+    print("\n📚 CURSOS DISPONIBLES:")
+    print("-" * 80)
+    cursos = course_controller.get_all_courses()
+    
+    if not cursos:
+        print("❌ No hay cursos registrados")
+        input("\n👉 Presiona ENTER para continuar...")
+        return
+    
+    for curso in cursos:
+        print(f"🆔 ID: {curso['id']} | 📖 {curso['title']} | 👨‍🏫 {curso['instructor']}")
+    
+    print("-" * 80)
+    course_id = input("\n🔢 Ingresa el ID del curso a modificar: ")
     
     # Mostrar datos actuales
     curso = course_controller.get_course_by_id(course_id)
     if not curso:
         print("❌ Curso no encontrado")
+        input("\n👉 Presiona ENTER para continuar...")
         return
     
     print(f"\nDatos actuales del curso '{curso['title']}':")
@@ -241,9 +264,23 @@ def modificar_curso(course_controller):
 
 def eliminar_curso(course_controller):
     print("\n🗑️ ELIMINAR CURSO")
-    print("-" * 20)
+    print("=" * 80)
     
-    course_id = input("ID del curso a eliminar: ")
+    # Primero mostrar lista de cursos disponibles
+    print("\n📚 CURSOS DISPONIBLES:")
+    print("-" * 80)
+    cursos = course_controller.get_all_courses()
+    
+    if not cursos:
+        print("❌ No hay cursos registrados")
+        input("\n👉 Presiona ENTER para continuar...")
+        return
+    
+    for curso in cursos:
+        print(f"🆔 ID: {curso['id']} | 📖 {curso['title']} | 👨‍🏫 {curso['instructor']}")
+    
+    print("-" * 80)
+    course_id = input("\n🔢 Ingresa el ID del curso a eliminar: ")
     
     # Confirmar eliminación
     confirmacion = input(f"¿Estás seguro de eliminar el curso ID {course_id}? (s/n): ")
