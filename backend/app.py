@@ -274,6 +274,8 @@ def modificar_curso(course_controller):
         print("✅ Curso modificado exitosamente")
     else:
         print("❌ Error al modificar curso")
+    
+    input("\n👉 Presiona ENTER para continuar...")
 
 def eliminar_curso(course_controller):
     print("\n🗑️ ELIMINAR CURSO")
@@ -304,6 +306,101 @@ def eliminar_curso(course_controller):
             print("❌ Error al eliminar curso")
     else:
         print("❌ Eliminación cancelada")
+    
+    input("\n👉 Presiona ENTER para continuar...")
+
+# ===== FUNCIONES DE INSCRIPCIONES (USUARIOS) =====
+def ver_mis_cursos(usuario, enrollment_controller):
+    print("\n📚 MIS CURSOS INSCRITOS")
+    print("=" * 80)
+    
+    inscripciones = enrollment_controller.get_user_enrollments(usuario.id)
+    
+    if inscripciones:
+        for insc in inscripciones:
+            print(f"\n🆔 Inscripción ID: {insc['id']}")
+            print(f"📖 Curso: {insc['course_title']}")
+            print(f"👨‍🏫 Instructor: {insc['course_instructor']}")
+            print(f"💰 Precio: ${insc['course_price']:,.2f}")
+            print(f"⏱️  Duración: {insc['course_duration']} minutos")
+            print(f"📊 Nivel: {insc['course_level'].capitalize()}")
+            print(f"📅 Fecha de inscripción: {insc['enrollment_date']}")
+            print(f"🔄 Estado: {insc['status'].upper()}")
+            print(f"💳 Estado de pago: {insc['payment_status'].upper()}")
+            print("-" * 80)
+        print(f"\n✅ Total de cursos inscritos: {len(inscripciones)}")
+    else:
+        print("❌ No estás inscrito en ningún curso todavía")
+        print("💡 Usa la opción 'Explorar cursos disponibles' para ver la oferta")
+    
+    input("\n👉 Presiona ENTER para continuar...")
+
+def explorar_cursos(course_controller):
+    print("\n🔍 CURSOS DISPONIBLES")
+    print("=" * 80)
+    
+    cursos = course_controller.get_all_courses()
+    
+    if cursos:
+        for curso in cursos:
+            print(f"\n🆔 ID: {curso['id']}")
+            print(f"📖 Título: {curso['title']}")
+            print(f"📝 Descripción: {curso['description']}")
+            print(f"💰 Precio: ${curso['price']:,.2f}")
+            print(f"⏱️  Duración: {curso['duration']} minutos")
+            print(f"📊 Nivel: {curso['level'].capitalize()}")
+            print(f"👨‍🏫 Instructor: {curso['instructor']}")
+            print(f"🏷️  Categoría: {curso['category']}")
+            print("-" * 80)
+        print(f"\n✅ Total de cursos disponibles: {len(cursos)}")
+    else:
+        print("❌ No hay cursos disponibles")
+    
+    input("\n👉 Presiona ENTER para continuar...")
+
+def inscribirse_curso(usuario, course_controller, enrollment_controller):
+    print("\n📝 INSCRIBIRSE A UN CURSO")
+    print("=" * 80)
+    
+    # Mostrar cursos disponibles
+    print("\n📚 CURSOS DISPONIBLES:")
+    print("-" * 80)
+    cursos = course_controller.get_all_courses()
+    
+    if not cursos:
+        print("❌ No hay cursos disponibles")
+        input("\n👉 Presiona ENTER para continuar...")
+        return
+    
+    for curso in cursos:
+        print(f"🆔 ID: {curso['id']} | 📖 {curso['title']} | 💰 ${curso['price']:,.2f} | 📊 {curso['level'].capitalize()}")
+    
+    print("-" * 80)
+    course_id = input("\n🔢 Ingresa el ID del curso en el que deseas inscribirte: ")
+    
+    # Verificar que el curso existe
+    curso = course_controller.get_course_by_id(course_id)
+    if not curso:
+        print("❌ Curso no encontrado")
+        input("\n👉 Presiona ENTER para continuar...")
+        return
+    
+    # Confirmar inscripción
+    print(f"\n📖 Curso seleccionado: {curso['title']}")
+    print(f"💰 Precio: ${curso['price']:,.2f}")
+    print(f"👨‍🏫 Instructor: {curso['instructor']}")
+    
+    confirmacion = input("\n¿Confirmas tu inscripción? (s/n): ")
+    if confirmacion.lower() == 's':
+        if enrollment_controller.enroll_user(usuario.id, course_id):
+            print("✅ ¡Inscripción exitosa!")
+            print("💡 Puedes ver tus cursos en 'Ver mis cursos inscritos'")
+        else:
+            print("❌ Error al inscribirse (puede que ya estés inscrito en este curso)")
+    else:
+        print("❌ Inscripción cancelada")
+    
+    input("\n👉 Presiona ENTER para continuar...")
 
 if __name__ == "__main__":
     main()
