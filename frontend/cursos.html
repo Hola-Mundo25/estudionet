@@ -3,122 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudio.net</title>
+    <meta name="description" content="Catálogo de cursos de programación en EstudioNet. JavaScript, React, Python, Node.js y más.">
+    <meta name="keywords" content="cursos programación, JavaScript, React, Python, Node.js, desarrollo web">
+    <title>Cursos de Programación - EstudioNet</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav class="navegation">
-            <a href="index.html" class="tituloHeader">
-                <i class="bi bi-code-square"></i>
+        <nav class="navegation" role="navigation" aria-label="Navegación principal">
+            <a href="index.html" class="tituloHeader" aria-label="EstudioNet - Inicio">
+                <i class="bi bi-code-square" aria-hidden="true"></i>
                 <span>EstudioNet</span>
             </a>
             <ul class="containerList">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="cursos.html" class="nav-link">Cursos</a></li>
+                <li><a href="about.html" class="nav-link">Quiénes Somos</a></li>
+                <li><a href="cursos.html" class="nav-link active">Cursos</a></li>
                 <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                <li><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
             </ul>
         </nav>
     </header>
+    
     <main>
         <section>
-            <h2>Cursos de EstudioNet</h2>
+            <h1>Cursos de EstudioNet</h1>
             <p>Aprende de los mejores instructores y acelera tu carrera como desarrollador</p>
             
             <div class="cursos">  
-                <div class="curso-container">
+                <article class="curso-container">
                     <div class="nivel principiante">Principiante</div>
                     <img src="../Imagenes/js.png" alt="Curso JavaScript Desde Cero">
                     <div class="curso-info">
-                        <div class="curso-title">JavaScript Desde Cero</div>
-                        <div class="curso-instructor">Por Estudio.net</div>
-                        <div class="curso-text">Domina JavaScript desde los fundamentos hasta conceptos avanzados. Incluye ES6+, DOM, APIs y proyectos prácticos.</div>
+                        <h2 class="curso-title">JavaScript Desde Cero</h2>
+                        <p class="curso-instructor">Por EstudioNet</p>
+                        <p class="curso-text">Domina JavaScript desde los fundamentos hasta conceptos avanzados. Incluye ES6+, DOM, APIs y proyectos prácticos.</p>
                         <div class="curso-meta">
-                            <div class="curso-precio">$89.99</div>
-                            <div class="curso-duracion">40 horas</div>
+                            <span class="curso-precio">$89.99</span>
+                            <span class="curso-duracion">40 horas</span>
                         </div>
-                        <button class="curso-btn">Inscribirse Ahora</button>
+                        <button class="curso-btn" aria-label="Inscribirse en JavaScript Desde Cero">Inscribirse Ahora</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="curso-container">
+                <article class="curso-container">
                     <div class="nivel intermedio">Intermedio</div>
                     <img src="../Imagenes/react.jpg" alt="Curso React Avanzado">
                     <div class="curso-info">
-                        <div class="curso-title">React Avanzado</div>
-                        <div class="curso-instructor">Por Estudio.net</div>
-                        <div class="curso-text">Aprende React Hooks, Context API, Redux, Testing y patrones avanzados para crear aplicaciones robustas.</div>
+                        <h2 class="curso-title">React Avanzado</h2>
+                        <p class="curso-instructor">Por EstudioNet</p>
+                        <p class="curso-text">Aprende React Hooks, Context API, Redux, Testing y patrones avanzados para crear aplicaciones robustas.</p>
                         <div class="curso-meta">
-                            <div class="curso-precio">$129.99</div>
-                            <div class="curso-duracion">55 horas</div>
+                            <span class="curso-precio">$129.99</span>
+                            <span class="curso-duracion">55 horas</span>
                         </div>
-                        <button class="curso-btn">Inscribirse Ahora</button>
+                        <button class="curso-btn" aria-label="Inscribirse en React Avanzado">Inscribirse Ahora</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="curso-container">
+                <article class="curso-container">
                     <div class="nivel principiante">Principiante</div>
                     <img src="../Imagenes/python.png" alt="Curso Python para Principiantes">
                     <div class="curso-info">
-                        <div class="curso-title">Python para Principiantes</div>
-                        <div class="curso-instructor">Por Estudio.net</div>
-                        <div class="curso-text">Inicia tu camino en la programación with Python. Desde sintaxis básica hasta desarrollo web con Django.</div>
+                        <h2 class="curso-title">Python para Principiantes</h2>
+                        <p class="curso-instructor">Por EstudioNet</p>
+                        <p class="curso-text">Inicia tu camino en la programación con Python. Desde sintaxis básica hasta desarrollo web con Django.</p>
                         <div class="curso-meta">
-                            <div class="curso-precio">$79.99</div>
-                            <div class="curso-duracion">35 horas</div>
+                            <span class="curso-precio">$79.99</span>
+                            <span class="curso-duracion">35 horas</span>
                         </div>
-                        <button class="curso-btn">Inscribirse Ahora</button>
+                        <button class="curso-btn" aria-label="Inscribirse en Python para Principiantes">Inscribirse Ahora</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="curso-container">
+                <article class="curso-container">
                     <div class="nivel avanzado">Avanzado</div>
                     <img src="../Imagenes/as.jpeg" alt="Curso Arquitectura de Software">
                     <div class="curso-info">
-                        <div class="curso-title">Arquitectura de Software</div>
-                        <div class="curso-instructor">Por Estudio.net</div>
-                        <div class="curso-text">Design patterns, microservicios, Clean Architecture y principios SOLID para sistemas escalables.</div>
+                        <h2 class="curso-title">Arquitectura de Software</h2>
+                        <p class="curso-instructor">Por EstudioNet</p>
+                        <p class="curso-text">Design patterns, microservicios, Clean Architecture y principios SOLID para sistemas escalables.</p>
                         <div class="curso-meta">
-                            <div class="curso-precio">$199.99</div>
-                            <div class="curso-duracion">70 horas</div>
+                            <span class="curso-precio">$199.99</span>
+                            <span class="curso-duracion">70 horas</span>
                         </div>
-                        <button class="curso-btn">Inscribirse Ahora</button>
+                        <button class="curso-btn" aria-label="Inscribirse en Arquitectura de Software">Inscribirse Ahora</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="curso-container">
+                <article class="curso-container">
                     <div class="nivel intermedio">Intermedio</div>
                     <img src="../Imagenes/node.png" alt="Curso Node.js Backend">
                     <div class="curso-info">
-                        <div class="curso-title">Node.js Backend</div>
-                        <div class="curso-instructor">Por Estudio.net</div>
-                        <div class="curso-text">Crea APIs REST robustas con Node.js, Express, MongoDB y implementa autenticación y seguridad.</div>
+                        <h2 class="curso-title">Node.js Backend</h2>
+                        <p class="curso-instructor">Por EstudioNet</p>
+                        <p class="curso-text">Crea APIs REST robustas con Node.js, Express, MongoDB y implementa autenticación y seguridad.</p>
                         <div class="curso-meta">
-                            <div class="curso-precio">$109.99</div>
-                            <div class="curso-duracion">48 horas</div>
+                            <span class="curso-precio">$109.99</span>
+                            <span class="curso-duracion">48 horas</span>
                         </div>
-                        <button class="curso-btn">Inscribirse Ahora</button>
+                        <button class="curso-btn" aria-label="Inscribirse en Node.js Backend">Inscribirse Ahora</button>
                     </div>
-                </div>
+                </article>
 
-                <div class="curso-container">
+                <article class="curso-container">
                     <div class="nivel principiante">Principiante</div>
                     <img src="../Imagenes/htmlcss.png" alt="Curso HTML CSS Responsive">
                     <div class="curso-info">
-                        <div class="curso-title">HTML & CSS Responsive</div>
-                        <div class="curso-instructor">Por Estudio.net</div>
-                        <div class="curso-text">Aprende a crear sitios web modernos y responsivos usando HTML5, CSS3, Flexbox y Grid Layout.</div>
+                        <h2 class="curso-title">HTML & CSS Responsive</h2>
+                        <p class="curso-instructor">Por EstudioNet</p>
+                        <p class="curso-text">Aprende a crear sitios web modernos y responsivos usando HTML5, CSS3, Flexbox y Grid Layout.</p>
                         <div class="curso-meta">
-                            <div class="curso-precio">$59.99</div>
-                            <div class="curso-duracion">28 horas</div>
+                            <span class="curso-precio">$59.99</span>
+                            <span class="curso-duracion">28 horas</span>
                         </div>
-                        <button class="curso-btn">Inscribirse Ahora</button>
+                        <button class="curso-btn" aria-label="Inscribirse en HTML & CSS Responsive">Inscribirse Ahora</button>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="containerFooter">
+            <div class="sector">
+                <h3>¿Listo para unirte a nuestra comunidad?</h3>
+                <p>Regístrate hoy y comienza a conectar con otros desarrolladores</p>
+                <ul class="redes">
+                    <li><a href="#" aria-label="Síguenos en Facebook">Facebook</a></li>
+                    <li><a href="https://github.com/Hola-Mundo25/estudionet" aria-label="Visita nuestro GitHub" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="#" aria-label="Conéctate en LinkedIn">LinkedIn</a></li>
+                </ul>
+                <h4 class="copyright">Code &copy; EstudioNet 2025</h4>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
