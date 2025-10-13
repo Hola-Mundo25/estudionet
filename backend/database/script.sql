@@ -26,6 +26,19 @@ CREATE TABLE IF NOT EXISTS courses (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+-- TABLA DE INSCRIPCIONES (RELACIÓN USUARIOS-CURSOS) --
+CREATE TABLE IF NOT EXISTS enrollments (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    course_id INT NOT NULL,
+    enrollment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('active', 'completed', 'cancelled') DEFAULT 'active',
+    payment_status ENUM('pending', 'paid', 'refunded') DEFAULT 'pending',
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE,
+    UNIQUE KEY unique_enrollment (user_id, course_id)
+);
+
 -- Insertar usuario admin (password: admin123) --
 INSERT INTO users (username, email, password, full_name, role)
 VALUES ('admin', 'admin@estudionet.com', '$2b$12$AJ29A7ZJZm33Th/eFjnvheTAkKGtoDHKkIyIoSKsSfIpjl3ZWzfFe', 'Administrador Principal', 'admin');
