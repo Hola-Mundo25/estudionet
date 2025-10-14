@@ -482,5 +482,5 @@ Este proyecto está bajo la **Licencia MIT** - ver el archivo `LICENSE` para má
 
 ## ⭐ Si te gustó el proyecto, dale una estrella ⭐
 
-Hecho con ❤️ por el equipo EstudioNet
+Hecho con ❤️ por  el equipo EstudioNet
 
